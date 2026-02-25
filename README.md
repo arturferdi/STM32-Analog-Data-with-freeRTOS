@@ -5,14 +5,19 @@ Here I created a program using STM32Cube IDE Framework to read analog data and c
 To set configurations, I use STM32CubeMX. And I generate some configurations, I also utilize USB CDC for serial monitor, so I shouldn't use USB To Serial to monitoring the result data through Serial Monitor. Here are complete configurations.
 
  1. System Core
+ 
 		- **RCC**	: Set HSE to Crystal/Ceramic Resonator.
 		- **SYS**	: Set "Timebase Source to TIM4" because freeRTOS strongly recommends not using SysTick for the HAL timebase.
 2. Analog
+
 		- **ADC1**	: Check IN1. Leave the settings as default.
 3. Connectivity
+
 		- **USB**	: Check Device (FS).
 4. Middleware & Software Packages
+
 		- **USB_DEVICE**	: Set Class For FS IP to Communication Device Class (Virtual Port COM)
 		- **FREERTOS**	: Set Interface to CMSIS_V1 or CMSIS_V2
 5. GPIO
+
 		- Use PC13 and set it to GPIO_Output (It is Blue Pill's built-in LED)
